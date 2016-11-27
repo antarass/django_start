@@ -25,7 +25,7 @@ SECRET_KEY = 'fnp%pk6jb=e^x(flmczd*$kv13d$=pv$gu_4l@3736&%+g=&ym'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.162.137']
+ALLOWED_HOSTS = ['192.168.162.137','127.0.0.1']
 
 
 # Application definition
