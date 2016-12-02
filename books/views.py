@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from books.models import Book
+from django import forms
 
 def search(request):
     errors = []
@@ -16,3 +17,8 @@ def search(request):
                           {'books': books, 'query': q})
     return render(request, 'search_form.html',
                   {'errors': errors})
+
+class ContactForm(forms.Form):
+    subject = forms.CharField()
+    email = forms.EmailField(required=False)
+    message = forms.CharField()
