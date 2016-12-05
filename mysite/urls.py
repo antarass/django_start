@@ -14,13 +14,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from mysite.views import hello, current_datetime, hours_ahead
-from books import views
+from . import views
+from books import views as booksviews
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^hello/$', hello),
-    url(r'^time/$', current_datetime),
-    url(r'^time/plus/(\d{1,2})/$', hours_ahead),
-    url(r'^search/$', views.search_form)
+    url(r'^hello/$', views.hello),
+    url(r'^time/$', views.current_datetime),
+    url(r'^time/plus/(\d{1,2})/$', views.hours_ahead),
+    url(r'^search/$', booksviews.search),
+    url(r'^contact/$', views.contact)
 ]
+
+# if settings.DEBUG:
+#     urlpatterns += [url(r'^debuginfo/$', views.debug),]
